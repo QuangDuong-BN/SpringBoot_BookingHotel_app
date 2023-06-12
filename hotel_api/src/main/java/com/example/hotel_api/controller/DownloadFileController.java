@@ -23,7 +23,7 @@ public class DownloadFileController {
         }
         return array;
     }
-
+    // code lay file_path cua tat ca cac anh.
     @GetMapping()
     public ArrayList<ImageData> getImage2() {
         return arrayListImageData;
