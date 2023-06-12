@@ -9,12 +9,18 @@ import java.util.List;
 @RestController
 @RequestMapping("/customer")
 public class CustomerController {
-    List<Customer> arrayListCustomer = new ArrayList<Customer>();
+    public ArrayList<Customer> arrayListCustomer = new ArrayList<>();
 
     @GetMapping
     public List<Customer> getCustomer() {
         return arrayListCustomer;
     }
+    /*
+    @GetMapping({"/","/{id}"})
+    public Customer getUser(@PathVariable String id){
+    }
+    */
+
 
     @PostMapping
     public Customer createUser(@RequestBody Customer customer) {
