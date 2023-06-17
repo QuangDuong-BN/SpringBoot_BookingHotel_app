@@ -15,12 +15,14 @@ public class CustomerController {
     public List<Customer> getCustomer() {
         return arrayListCustomer;
     }
-    /*
-    @GetMapping({"/","/{id}"})
+    @GetMapping("/{id}")
     public Customer getUser(@PathVariable String id){
+        for(int i=0;i<arrayListCustomer.size();i++){
+            if(id.equals(arrayListCustomer.get(i).getId()))
+                return arrayListCustomer.get(i);
+        }
+        return new Customer();
     }
-    */
-
 
     @PostMapping
     public Customer createUser(@RequestBody Customer customer) {

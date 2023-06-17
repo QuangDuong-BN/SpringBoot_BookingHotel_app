@@ -10,6 +10,7 @@ import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 public class FileUploadUtil {
     public static void saveFile(String fileName, MultipartFile multipartFile) throws IOException {
+        //src/main/resources/images/
         Path uploadPath = Paths.get("Files-Upload");
 
         if (!Files.exists(uploadPath)) {

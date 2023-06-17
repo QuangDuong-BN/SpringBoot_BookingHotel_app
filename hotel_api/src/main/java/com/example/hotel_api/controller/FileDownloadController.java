@@ -3,13 +3,11 @@ package com.example.hotel_api.controller;
 import com.example.hotel_api.entities.ImageData;
 import org.springframework.web.bind.annotation.*;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Collection;
 
 @RestController
-@RequestMapping("/downloadfile")
-public class DownloadFileController {
+@RequestMapping("/listpathimage")
+public class FileDownloadController {
     public ArrayList<ImageData> arrayListImageData = new ArrayList<>();
 
     @GetMapping("/{id}")
