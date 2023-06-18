@@ -12,7 +12,7 @@ import java.io.File;
 @RestController
 public class ViewImageController {
 
-    @GetMapping("/images/{imageName}")
+    @GetMapping("/image/{imageName}")
     public ResponseEntity<Resource> getImage(@PathVariable String imageName) {
         try {
             String imagePath = System.getProperty("user.dir") + "/Files-Upload/" + imageName;
