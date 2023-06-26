@@ -1,7 +1,6 @@
 package com.example.hotel_api.controller;
 
-import com.example.hotel_api.entities.Bankcard;
-import com.example.hotel_api.entities.Booking;
+import com.example.hotel_api.entities.Card;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -9,24 +8,24 @@ import java.util.List;
 @RestController
 @RequestMapping("/bankcard")
 public class BankcardController {
-    public ArrayList<Bankcard> arrayList = new ArrayList<>();
+    public ArrayList<Card> arrayList = new ArrayList<>();
 
     @GetMapping
-    public List<Bankcard> get1() {
+    public List<Card> get1() {
         return arrayList;
     }
 
     @GetMapping("/{id}")
-    public Bankcard get2(@PathVariable String id) {
+    public Card get2(@PathVariable String id) {
         for (int i = 0; i < arrayList.size(); i++) {
             if (id.equals(arrayList.get(i).getId()))
                 return arrayList.get(i);
         }
-        return new Bankcard();
+        return new Card();
     }
 
     @PostMapping
-    public Bankcard create(@RequestBody Bankcard bankcard) {
+    public Card create(@RequestBody Card bankcard) {
         arrayList.add(bankcard);
         return bankcard;
     }
