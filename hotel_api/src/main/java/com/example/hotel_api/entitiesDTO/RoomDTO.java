@@ -9,6 +9,7 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+
 public class RoomDTO {
     private String id;
     private String hotel_id;
@@ -20,6 +21,4 @@ public class RoomDTO {
     private boolean status;
     private String description;
     private List<String> listURL;
-
-
 }

@@ -7,6 +7,7 @@ import java.sql.Date;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+
 public class Booking {
     private String id;
     private String customer_id;

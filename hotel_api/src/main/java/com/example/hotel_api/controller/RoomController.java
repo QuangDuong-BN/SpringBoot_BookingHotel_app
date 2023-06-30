@@ -26,6 +26,15 @@ public class RoomController {
         }
         return new RoomDTO();
     }
+    @GetMapping("/room_name/{id}")
+    public List<RoomDTO> get3(@PathVariable String id) {
+        List<RoomDTO> outputData = new ArrayList<>();
+        for (int i = 0; i < arrayList.size(); i++) {
+            if (id.equals(arrayList.get(i).getRoom_name()))
+                outputData.add(arrayList.get(i));
+        }
+        return outputData;
+    }
 
     @PostMapping
     public RoomDTO create(@RequestBody RoomDTO room) {
