@@ -2,6 +2,7 @@ package com.example.hotel_api.controller;
 
 import com.example.hotel_api.entities.Booking;
 import com.example.hotel_api.entities.Customer;
+import com.example.hotel_api.entitiesDTO.BookingDTO;
 import com.example.hotel_api.entitiesDTO.StatisticDTO;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,24 +14,24 @@ import java.util.List;
 @RestController
 @RequestMapping("/booking")
 public class BookingController {
-    public ArrayList<Booking> arrayListBooking = new ArrayList<>();
+    public ArrayList<BookingDTO> arrayListBooking = new ArrayList<>();
 
     @GetMapping
-    public List<Booking> get1() {
+    public List<BookingDTO> get1() {
         return arrayListBooking;
     }
 
     @GetMapping("/{id}")
-    public Booking get2(@PathVariable String id) {
+    public BookingDTO get2(@PathVariable String id) {
         for (int i = 0; i < arrayListBooking.size(); i++) {
             if (id.equals(arrayListBooking.get(i).getId()))
                 return arrayListBooking.get(i);
         }
-        return new Booking();
+        return new BookingDTO();
     }
 
     @PostMapping
-    public Booking create(@RequestBody Booking booking) {
+    public BookingDTO create(@RequestBody BookingDTO booking) {
         arrayListBooking.add(booking);
         return booking;
     }
@@ -50,7 +51,7 @@ public class BookingController {
         });
         String month = null;
         StatisticDTO statisticDTO = new StatisticDTO();
-        for (Booking booking : arrayListBooking) {
+        for (BookingDTO booking : arrayListBooking) {
             String formattedEndDate = formatDate(booking.getEnd_date());
             if (month == null) {
                 month = formattedEndDate;

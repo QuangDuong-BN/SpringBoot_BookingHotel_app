@@ -2,6 +2,7 @@ package com.example.hotel_api;
 
 import com.example.hotel_api.controller.*;
 import com.example.hotel_api.entities.*;
+import com.example.hotel_api.entitiesDTO.BookingDTO;
 import com.example.hotel_api.entitiesDTO.CustomerDTO;
 import com.example.hotel_api.entitiesDTO.HotelDTO;
 import com.example.hotel_api.entitiesDTO.RoomDTO;
@@ -9,8 +10,14 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Base64;
+
 
 @SpringBootApplication()
 public class HotelApiApplication {
@@ -46,9 +53,54 @@ public class HotelApiApplication {
         roomController.arrayList.add(new RoomDTO("10", "ks02", "P129", "DoubleRoom", 1, 2, 500000, true, des, listUrl));
 
         List<String> listImageHotel = new ArrayList<>();
-        listImageHotel.add("h1.jpg");
-        listImageHotel.add("h2.jpg");
-        listImageHotel.add("h3.jpg");
+
+        String imagePath1 = System.getProperty("user.dir") + "/Files-Upload/" + "h1.jpg";
+        File file1 = new File(imagePath1);
+        byte[] fileBytes1 = new byte[(int) file1.length()];
+
+        try (FileInputStream fis1 = new FileInputStream(file1)) {
+            fis1.read(fileBytes1);
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+        String base64Image1 = Base64.getEncoder().encodeToString(fileBytes1);
+
+
+        String imagePath2 = System.getProperty("user.dir") + "/Files-Upload/" + "h2.jpg";
+        File file2 = new File(imagePath2);
+        byte[] fileBytes2 = new byte[(int) file2.length()];
+
+        try (FileInputStream fis2 = new FileInputStream(file2)) {
+            fis2.read(fileBytes2);
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+        String base64Image2 = Base64.getEncoder().encodeToString(fileBytes2);
+
+
+        String imagePath3 = System.getProperty("user.dir") + "/Files-Upload/" + "h3.jpg";
+        File file3 = new File(imagePath3);
+        byte[] fileBytes3 = new byte[(int) file3.length()];
+
+        try (FileInputStream fis3 = new FileInputStream(file3)) {
+            fis3.read(fileBytes3);
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+        String base64Image3 = Base64.getEncoder().encodeToString(fileBytes3);
+        listImageHotel.add(base64Image1);
+        listImageHotel.add(base64Image2);
+        listImageHotel.add(base64Image3);
+
         hotelController.arrayList.add(new HotelDTO("ks01", "SMARANA Hanoi", new Location("Hà Nội", "Hoàn Kiếm", "Số 95 đường 16"), 5, 8.0, 50, listImageHotel, roomController.arrayList));
         hotelController.arrayList.add(new HotelDTO("ks02", "Pullman Hanoi", new Location("Hà Nội", "Hoàn Kiếm", "Số 9 đường 16"), 5, 8.0, 50, listImageHotel, roomController.arrayList));
         hotelController.arrayList.add(new HotelDTO("ks03", "Alula Sweet Home", new Location("Hà Nội", "Hoàn Kiếm", "Số 97 đường 16"), 5, 8.0, 50, listImageHotel, roomController.arrayList));
@@ -71,11 +123,11 @@ public class HotelApiApplication {
         BookingController bookingController = context.getBean(BookingController.class);
         java.sql.Date date1 = java.sql.Date.valueOf("2023-06-15");
         java.sql.Date date2 = java.sql.Date.valueOf("2023-06-20");
-        bookingController.arrayListBooking.add(new Booking("1", "kh1", "ks01", "1", date1, date2, 3000000));
+        bookingController.arrayListBooking.add(new BookingDTO("1", "kh1","Duong","0344381904", "ks01", "1","Executive", date1, date2, 3000000));
 
         date1 = java.sql.Date.valueOf("2023-06-19");
         date2 = java.sql.Date.valueOf("2023-06-22");
-        bookingController.arrayListBooking.add(new Booking("2", "kh2", "ks01", "4", date1, date2, 4000000));
+        bookingController.arrayListBooking.add(new BookingDTO("2","kh2","Huyen","0944381904","ks01" , "4", "DoubleRoom", date1, date2, 4000000));
 
 
         FileDownloadController downloadFileController = context.getBean(FileDownloadController.class);

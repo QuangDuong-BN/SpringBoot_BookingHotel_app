@@ -4,6 +4,7 @@ import com.example.hotel_api.entities.Booking;
 import com.example.hotel_api.entities.Hotel;
 import com.example.hotel_api.entitiesDTO.CustomerDTO;
 import com.example.hotel_api.entitiesDTO.HotelDTO;
+import com.example.hotel_api.entitiesDTO.HotelListRoomName;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;

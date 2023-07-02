@@ -63,4 +63,5 @@ public class CustomerController {
         arrayListCustomer.removeIf(arrayListCustomer -> arrayListCustomer.getId().equals(id));
     }
 
+
 }
