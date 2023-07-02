@@ -20,6 +20,15 @@ public class HotelController {
         return arrayList;
     }
 
+    @GetMapping("/listnamehotel")
+    public List<String> getNameHotel() {
+        List<String> listName = new ArrayList<>();
+        for (int i = 0; i < arrayList.size(); i++) {
+            listName.add(arrayList.get(i).getName());
+        }
+        return listName;
+    }
+
     @GetMapping()
     public HotelDTO getHotel2(@RequestParam("id") String id) {
         int size = arrayList.size();

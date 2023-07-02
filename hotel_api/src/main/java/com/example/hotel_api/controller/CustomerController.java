@@ -6,6 +6,7 @@ import com.example.hotel_api.entitiesDTO.CustomerDTO;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 @RestController
@@ -15,6 +16,7 @@ public class CustomerController {
 
     @GetMapping("/list")
     public List<CustomerDTO> getCustomer() {
+        arrayListCustomer.sort(Comparator.comparing(CustomerDTO::getId));
         return arrayListCustomer;
     }
 
@@ -37,7 +39,7 @@ public class CustomerController {
     public String login(@RequestParam("phone") String phone, @RequestParam("password") String password) {
 
         for (int i = 0; i < arrayListCustomer.size(); i++) {
-            if (phone.equals(arrayListCustomer.get(i).getPhone())){
+            if (phone.equals(arrayListCustomer.get(i).getPhone())) {
                 if (password.equals(arrayListCustomer.get(i).getPassword()))
                     return arrayListCustomer.get(i).getId();
             }
@@ -46,13 +48,17 @@ public class CustomerController {
     }
 
     @PostMapping("/register")
-    public boolean register(@RequestBody Customer customer) {
-        CustomerDTO customerDTO =new CustomerDTO();
-        customerDTO.setId(customer.getId());
-        customerDTO.setName(customer.getName());
-        customerDTO.setPhone(customer.getPhone());
-        customerDTO.setEmail(customer.getEmail());
-        customerDTO.setPassword(customer.getPassword());
+    public boolean register(@RequestParam("id") String id,
+                            @RequestParam("name") String name,
+                            @RequestParam("email") String email,
+                            @RequestParam("phone") String phone,
+                            @RequestParam("password") String password) {
+        CustomerDTO customerDTO = new CustomerDTO();
+        customerDTO.setId(id);
+        customerDTO.setName(name);
+        customerDTO.setPhone(phone);
+        customerDTO.setEmail(email);
+        customerDTO.setPassword(password);
         arrayListCustomer.add(customerDTO);
         return true;
     }
