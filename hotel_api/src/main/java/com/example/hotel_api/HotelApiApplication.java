@@ -61,11 +61,11 @@ public class HotelApiApplication {
         listCard.add(new Card("1", "kh1", "9982415569", "Duong", java.sql.Date.valueOf("2023-06-19"), "993", "MB Bank"));
 
         customerController.arrayListCustomer.add(new CustomerDTO("kh1", "Duong", "duong@gmail.com", "0344381904", "111111", listCard));
-        customerController.arrayListCustomer.add(new CustomerDTO("kh2", "Huyen", "sss@gmail.com", "0344381904", "111111", listCard));
-        customerController.arrayListCustomer.add(new CustomerDTO("kh3", "Hai", "aaaaa@gmail.com", "0344381904", "111111", listCard));
-        customerController.arrayListCustomer.add(new CustomerDTO("kh4", "Hoan", "ddd@gmail.com", "0344381904", "111111", listCard));
-        customerController.arrayListCustomer.add(new CustomerDTO("kh5", "Tu", "duorrrng@gmail.com", "0344381904", "111111", listCard));
-        customerController.arrayListCustomer.add(new CustomerDTO("kh6", "Lien", "wwwww@gmail.com", "0344381904", "111111", listCard));
+        customerController.arrayListCustomer.add(new CustomerDTO("kh2", "Huyen", "sss@gmail.com", "0944381904", "111111", listCard));
+        customerController.arrayListCustomer.add(new CustomerDTO("kh3", "Hai", "aaaaa@gmail.com", "0844381904", "111111", listCard));
+        customerController.arrayListCustomer.add(new CustomerDTO("kh4", "Hoan", "ddd@gmail.com", "0744381904", "111111", listCard));
+        customerController.arrayListCustomer.add(new CustomerDTO("kh5", "Tu", "duorrrng@gmail.com", "0644381904", "111111", listCard));
+        customerController.arrayListCustomer.add(new CustomerDTO("kh6", "Lien", "wwwww@gmail.com", "0544381904", "111111", listCard));
 
 
         BookingController bookingController = context.getBean(BookingController.class);
