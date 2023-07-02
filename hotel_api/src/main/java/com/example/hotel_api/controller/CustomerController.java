@@ -33,12 +33,12 @@ public class CustomerController {
         return customer;
     }
 
-    @PostMapping("/login")
-    public String login(@RequestBody CusLogin cusLogin) {
+    @GetMapping("/login")
+    public String login(@RequestParam("phone") String phone, @RequestParam("password") String password) {
 
         for (int i = 0; i < arrayListCustomer.size(); i++) {
-            if (cusLogin.getPhone().equals(arrayListCustomer.get(i).getPhone())){
-                if (cusLogin.getPassword().equals(arrayListCustomer.get(i).getPassword()))
+            if (phone.equals(arrayListCustomer.get(i).getPhone())){
+                if (password.equals(arrayListCustomer.get(i).getPassword()))
                     return arrayListCustomer.get(i).getId();
             }
         }

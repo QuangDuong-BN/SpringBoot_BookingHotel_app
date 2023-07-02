@@ -101,6 +101,7 @@ public class HotelApiApplication {
         listImageHotel.add(base64Image2);
         listImageHotel.add(base64Image3);
 
+
         hotelController.arrayList.add(new HotelDTO("ks01", "SMARANA Hanoi", new Location("Hà Nội", "Hoàn Kiếm", "Số 95 đường 16"), 5, 8.0, 50, listImageHotel, roomController.arrayList));
         hotelController.arrayList.add(new HotelDTO("ks02", "Pullman Hanoi", new Location("Hà Nội", "Hoàn Kiếm", "Số 9 đường 16"), 5, 8.0, 50, listImageHotel, roomController.arrayList));
         hotelController.arrayList.add(new HotelDTO("ks03", "Alula Sweet Home", new Location("Hà Nội", "Hoàn Kiếm", "Số 97 đường 16"), 5, 8.0, 50, listImageHotel, roomController.arrayList));
