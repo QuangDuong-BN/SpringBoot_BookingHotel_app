@@ -123,11 +123,11 @@ public class HotelApiApplication {
         BookingController bookingController = context.getBean(BookingController.class);
         java.sql.Date date1 = java.sql.Date.valueOf("2023-06-15");
         java.sql.Date date2 = java.sql.Date.valueOf("2023-06-20");
-        bookingController.arrayListBooking.add(new BookingDTO("1", "kh1","Duong","0344381904", "ks01", "1","Executive", date1, date2, 3000000));
+        bookingController.arrayListBooking.add(new BookingDTO("1", "kh1","Duong","0344381904", "ks01", "1","Executive","P124", date1, date2, 3000000));
 
         date1 = java.sql.Date.valueOf("2023-06-19");
         date2 = java.sql.Date.valueOf("2023-06-22");
-        bookingController.arrayListBooking.add(new BookingDTO("2","kh2","Huyen","0944381904","ks01" , "4", "DoubleRoom", date1, date2, 4000000));
+        bookingController.arrayListBooking.add(new BookingDTO("2","kh2","Huyen","0944381904","ks01" , "4", "DoubleRoom","P127", date1, date2, 4000000));
 
 
         FileDownloadController downloadFileController = context.getBean(FileDownloadController.class);

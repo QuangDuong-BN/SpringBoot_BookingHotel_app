@@ -16,6 +16,7 @@ public class BookingDTO {
     private String hotel_id;
     private String room_id;
     private String room_name;
+    private String room_number;
     private java.sql.Date start_date;
     private java.sql.Date end_date;
     private double price;
