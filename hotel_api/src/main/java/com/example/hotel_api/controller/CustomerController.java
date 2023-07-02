@@ -34,7 +34,7 @@ public class CustomerController {
     }
 
     @PostMapping("/login")
-    public String createUser(@RequestBody CusLogin cusLogin) {
+    public String login(@RequestBody CusLogin cusLogin) {
 
         for (int i = 0; i < arrayListCustomer.size(); i++) {
             if (cusLogin.getPhone().equals(arrayListCustomer.get(i).getPhone())){
@@ -44,6 +44,19 @@ public class CustomerController {
         }
         return null;
     }
+
+    @PostMapping("/register")
+    public boolean register(@RequestBody Customer customer) {
+        CustomerDTO customerDTO =new CustomerDTO();
+        customerDTO.setId(customer.getId());
+        customerDTO.setName(customer.getName());
+        customerDTO.setPhone(customer.getPhone());
+        customerDTO.setEmail(customer.getEmail());
+        customerDTO.setPassword(customer.getPassword());
+        arrayListCustomer.add(customerDTO);
+        return true;
+    }
+
 
     @DeleteMapping("/{id}")
     public void deleteCustomer(@PathVariable String id) {
