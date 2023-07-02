@@ -40,6 +40,17 @@ public class HotelController {
         return null;
     }
 
+    @GetMapping("/namehotel")
+    public String getNameHotel(@RequestParam("id") String id) {
+        int size = arrayList.size();
+        for (int i = 0; i < size; i++) {
+            if (id.equals(arrayList.get(i).getId())) {
+                return arrayList.get(i).getName();
+            }
+        }
+        return null;
+    }
+
     @PostMapping
     public HotelDTO create(@RequestBody HotelDTO hotel) {
         arrayList.add(hotel);
