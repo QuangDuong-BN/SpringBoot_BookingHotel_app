@@ -4,6 +4,7 @@ import com.example.hotel_api.entities.Booking;
 import com.example.hotel_api.entities.Room;
 import com.example.hotel_api.entitiesDTO.RoomDTO;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,6 +33,18 @@ public class RoomController {
         for (int i = 0; i < arrayList.size(); i++) {
             if (id.equals(arrayList.get(i).getRoom_name()))
                 outputData.add(arrayList.get(i));
+        }
+        return outputData;
+    }
+
+    @GetMapping("/roomstatus")
+    public List<RoomDTO> get4(@RequestParam("status") boolean status) {
+        List<RoomDTO> outputData = new ArrayList<>();
+        for (int i = 0; i < arrayList.size(); i++) {
+            if (status == arrayList.get(i).isStatus()){
+                outputData.add(arrayList.get(i));
+            }
+
         }
         return outputData;
     }
