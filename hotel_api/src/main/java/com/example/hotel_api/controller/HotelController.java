@@ -29,6 +29,15 @@ public class HotelController {
         return listName;
     }
 
+    @GetMapping("/listidhotel")
+    public List<String> getIdHotel() {
+        List<String> listName = new ArrayList<>();
+        for (int i = 0; i < arrayList.size(); i++) {
+            listName.add(arrayList.get(i).getId());
+        }
+        return listName;
+    }
+
     @GetMapping()
     public HotelDTO getHotel2(@RequestParam("id") String id) {
         int size = arrayList.size();
