@@ -14,21 +14,21 @@ import java.util.List;
 public class RoomController {
     public List<RoomDTO> arrayList = new ArrayList<>();
 
-    @GetMapping
+    @GetMapping("/list")
     public List<RoomDTO> get1() {
         return arrayList;
     }
 
-    @GetMapping("/{id}")
-    public RoomDTO get2(@PathVariable String id) {
+    @GetMapping()
+    public RoomDTO get2(@RequestParam("id") String id) {
         for (int i = 0; i < arrayList.size(); i++) {
             if (id.equals(arrayList.get(i).getId()))
                 return arrayList.get(i);
         }
         return new RoomDTO();
     }
-    @GetMapping("/room_name/{id}")
-    public List<RoomDTO> get3(@PathVariable String id) {
+    @GetMapping("/room_name/")
+    public List<RoomDTO> get3(@RequestParam("id") String id) {
         List<RoomDTO> outputData = new ArrayList<>();
         for (int i = 0; i < arrayList.size(); i++) {
             if (id.equals(arrayList.get(i).getRoom_name()))
@@ -55,8 +55,8 @@ public class RoomController {
         return room;
     }
 
-    @DeleteMapping("/{id}")
-    public void delete(@PathVariable String id) {
+    @DeleteMapping()
+    public void delete(@RequestParam("id") String id) {
         arrayList.removeIf(arrayList -> arrayList.getId().equals(id));
     }
 }

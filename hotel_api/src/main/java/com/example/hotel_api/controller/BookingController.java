@@ -16,13 +16,13 @@ import java.util.List;
 public class BookingController {
     public ArrayList<BookingDTO> arrayListBooking = new ArrayList<>();
 
-    @GetMapping
+    @GetMapping("/list")
     public List<BookingDTO> get1() {
         return arrayListBooking;
     }
 
-    @GetMapping("/{id}")
-    public BookingDTO get2(@PathVariable String id) {
+    @GetMapping()
+    public BookingDTO get2(@RequestParam("id") String id) {
         for (int i = 0; i < arrayListBooking.size(); i++) {
             if (id.equals(arrayListBooking.get(i).getId()))
                 return arrayListBooking.get(i);
@@ -36,8 +36,8 @@ public class BookingController {
         return booking;
     }
 
-    @DeleteMapping("/{id}")
-    public void delete(@PathVariable String id) {
+    @DeleteMapping()
+    public void delete(@RequestParam("id") String id) {
         arrayListBooking.removeIf(arrayListBooking -> arrayListBooking.getId().equals(id));
     }
 

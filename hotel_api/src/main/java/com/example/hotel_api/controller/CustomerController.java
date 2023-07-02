@@ -13,13 +13,13 @@ import java.util.List;
 public class CustomerController {
     public List<CustomerDTO> arrayListCustomer = new ArrayList<>();
 
-    @GetMapping
+    @GetMapping("/list")
     public List<CustomerDTO> getCustomer() {
         return arrayListCustomer;
     }
 
-    @GetMapping("/{id}")
-    public CustomerDTO getUser(@PathVariable String id) {
+    @GetMapping()
+    public CustomerDTO getUser(@RequestParam("id") String id) {
         for (int i = 0; i < arrayListCustomer.size(); i++) {
             if (id.equals(arrayListCustomer.get(i).getId()))
                 return arrayListCustomer.get(i);

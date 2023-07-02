@@ -10,13 +10,13 @@ import java.util.List;
 public class BankcardController {
     public ArrayList<Card> arrayList = new ArrayList<>();
 
-    @GetMapping
+    @GetMapping("/list")
     public List<Card> get1() {
         return arrayList;
     }
 
-    @GetMapping("/{id}")
-    public Card get2(@PathVariable String id) {
+    @GetMapping
+    public Card get2(@RequestParam("id") String id) {
         for (int i = 0; i < arrayList.size(); i++) {
             if (id.equals(arrayList.get(i).getId()))
                 return arrayList.get(i);
@@ -30,8 +30,8 @@ public class BankcardController {
         return bankcard;
     }
 
-    @DeleteMapping("/{id}")
-    public void delete(@PathVariable String id) {
+    @DeleteMapping
+    public void delete(@RequestParam("id") String id) {
         arrayList.removeIf(arrayList -> arrayList.getId().equals(id));
     }
 }
