@@ -18,16 +18,16 @@ public class HotelController {
     public List<HotelDTO> getHotel1() {
         return arrayList;
     }
+
     @GetMapping("/{id}")
-    public ArrayList<HotelDTO> getHotel2(@PathVariable String id) {
+    public HotelDTO getHotel2(@PathVariable String id) {
         int size = arrayList.size();
-        ArrayList<HotelDTO> array = new ArrayList<>();
         for (int i = 0; i < size; i++) {
-            if (id.equals(arrayList.get(i).getId())){
-                array.add(arrayList.get(i));
+            if (id.equals(arrayList.get(i).getId())) {
+                return arrayList.get(i);
             }
         }
-        return array;
+        return null;
     }
 
     @PostMapping
