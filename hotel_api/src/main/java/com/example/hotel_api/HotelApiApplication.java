@@ -40,10 +40,10 @@ public class HotelApiApplication {
         listUrl.add("room6.jpg");
         listUrl.add("room7.jpg");
 
-        roomController.arrayList.add(new RoomDTO("1", "ks01", "P124", "Executive", 1, 3, (double) 5000000, true, des, listUrl));
+        roomController.arrayList.add(new RoomDTO("1", "ks01", "P124", "Executive", 1, 3, (double) 5000000, false, des, listUrl));
         roomController.arrayList.add(new RoomDTO("2", "ks01", "P125", "Executive", 1, 2, 500000, true, des, listUrl));
         roomController.arrayList.add(new RoomDTO("3", "ks01", "P126", "SingleRoom", 1, 1, 500000, true, des, listUrl));
-        roomController.arrayList.add(new RoomDTO("4", "ks01", "P127", "DoubleRoom", 1, 2, 500000, true, des, listUrl));
+        roomController.arrayList.add(new RoomDTO("4", "ks01", "P127", "DoubleRoom", 1, 2, 500000, false, des, listUrl));
         roomController.arrayList.add(new RoomDTO("5", "ks01", "P129", "DoubleRoom", 1, 2, 500000, true, des, listUrl));
 
         roomController.arrayList.add(new RoomDTO("6", "ks02", "P124", "Executive", 1, 3, (double) 5000000, true, des, listUrl));
