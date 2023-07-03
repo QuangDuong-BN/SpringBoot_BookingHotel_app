@@ -121,11 +121,15 @@ public class HotelApiApplication {
         list_room_ks02.add(new RoomDTO("14", "ks03", "P129", "DoubleRoom", 1, 2, 500000, true, des, listUrl));
 
         List<RoomDTO> list_room_ks04 = new ArrayList<>();
-        hotelController.arrayList.add(new HotelDTO("ks01", "SMARANA Hanoi", new Location("Hà Nội", "Hoàn Kiếm", "Số 95 đường 16"), 5, 8.0, 50, listImageHotel, list_room_ks01));
-        hotelController.arrayList.add(new HotelDTO("ks02", "Pullman Hanoi", new Location("Hà Nội", "Hoàn Kiếm", "Số 9 đường 16"), 5, 8.0, 50, listImageHotel, list_room_ks02));
-        hotelController.arrayList.add(new HotelDTO("ks03", "Alula Sweet Home", new Location("Hà Nội", "Hoàn Kiếm", "Số 97 đường 16"), 5, 8.0, 50, listImageHotel, list_room_ks03));
-        hotelController.arrayList.add(new HotelDTO("ks04", "Melia Hanoi", new Location("Hà Nội", "Hoàn Kiếm", "Số 10 đường 16"), 5, 8.0, 50, listImageHotel, list_room_ks04));
-        hotelController.arrayList.add(new HotelDTO("ks05", "Mường Thanh", new Location("Hà Nội", "Hoàn Kiếm", "Số 5 đường 16"), 5, 8.0, 50, listImageHotel, list_room_ks04));
+        String des1 = "Khách sạn XXX là một điểm đến tuyệt vời cho du khách muốn tận hưởng sự tiện nghi và không gian sang trọng. // Với nội thất hiện đại và phòng ngủ rộng rãi, khách sạn XYZ đảm bảo bạn có một trải nghiệm lưu trú thoải mái và tiện nghi.";
+        String des2 = "Khách sạn XXX nằm trong khu vực trung tâm, mang đến sự thuận tiện cho việc khám phá các điểm tham quan, nhà hàng và cửa hàng mua sắm. // Đội ngũ nhân viên thân thiện và chuyên nghiệp tại khách sạn XXX sẽ đảm bảo bạn nhận được dịch vụ tận tâm và hài lòng";
+        String des3 = "Khách sạn XXX cam kết mang đến sự hài lòng và trải nghiệm lưu trú đáng nhớ cho du khách, với dịch vụ chất lượng và không gian ấm cúng. // Với không gian nghỉ ngơi thoải mái và view đẹp, khách sạn XXX là nơi lý tưởng để thưởng thức không gian yên tĩnh và tận hưởng không khí thư giãn.";
+
+        hotelController.arrayList.add(new HotelDTO("ks01", "SMARANA Hanoi", new Location("Hà Nội", "Hoàn Kiếm", "Số 95 đường 16"),500000, 5, 8.0, 50, des1, listImageHotel, list_room_ks01));
+        hotelController.arrayList.add(new HotelDTO("ks02", "Pullman Hanoi", new Location("Hà Nội", "Hoàn Kiếm", "Số 9 đường 16"),500000, 5, 8.0, 50,des2, listImageHotel, list_room_ks02));
+        hotelController.arrayList.add(new HotelDTO("ks03", "Alula Sweet Home", new Location("Hà Nội", "Hoàn Kiếm", "Số 97 đường 16"),500000, 5, 8.0, 50,des3, listImageHotel, list_room_ks03));
+        hotelController.arrayList.add(new HotelDTO("ks04", "Melia Hanoi", new Location("Hà Nội", "Hoàn Kiếm", "Số 10 đường 16"),500000, 5, 8.0, 50,des2, listImageHotel, list_room_ks03));
+        hotelController.arrayList.add(new HotelDTO("ks05", "Mường Thanh", new Location("Hà Nội", "Hoàn Kiếm", "Số 5 đường 16"),500000, 5, 8.0, 50,des3, listImageHotel, list_room_ks02));
 
 
         CustomerController customerController = context.getBean(CustomerController.class);

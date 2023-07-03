@@ -2,7 +2,10 @@ package com.example.hotel_api.controller;
 
 import com.example.hotel_api.entities.Booking;
 import com.example.hotel_api.entities.Customer;
+import com.example.hotel_api.entities.Hotel;
 import com.example.hotel_api.entitiesDTO.BookingDTO;
+import com.example.hotel_api.entitiesDTO.HotelDTO;
+import com.example.hotel_api.entitiesDTO.RoomDTO;
 import com.example.hotel_api.entitiesDTO.StatisticDTO;
 import org.springframework.web.bind.annotation.*;
 
@@ -10,6 +13,8 @@ import java.sql.Date;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
+
+import static com.example.hotel_api.controller.HotelController.arrayList;
 
 @RestController
 @RequestMapping("/booking")
@@ -32,6 +37,17 @@ public class BookingController {
 
     @PostMapping
     public BookingDTO create(@RequestBody BookingDTO booking) {
+        for (int i= 0; i < arrayList.size(); i++){
+            HotelDTO hotel = arrayList.get(i);
+            if (hotel.getId().equals(booking.getHotel_id())){
+                List<RoomDTO> rooms = hotel.getRooms();
+                for (int j = 0; j< rooms.size(); j++){
+                    if (rooms.get(j).equals(booking.getRoom_id())){
+                        rooms.get(j).setStatus(!rooms.get(j).isStatus());
+                    }
+                }
+            }
+        }
         arrayListBooking.add(booking);
         return booking;
     }

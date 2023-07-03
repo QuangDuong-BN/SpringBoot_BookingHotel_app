@@ -15,4 +15,6 @@ public class Hotel {
     private int start;
     private double vote;
     private int vote_total;
+
+
 }

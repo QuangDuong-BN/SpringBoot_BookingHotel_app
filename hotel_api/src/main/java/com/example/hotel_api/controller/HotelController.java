@@ -13,7 +13,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/hotel")
 public class HotelController {
-    public ArrayList<HotelDTO> arrayList = new ArrayList<>();
+    public static ArrayList<HotelDTO> arrayList = new ArrayList<>();
 
     @GetMapping("/list")
     public List<HotelDTO> getHotel1() {

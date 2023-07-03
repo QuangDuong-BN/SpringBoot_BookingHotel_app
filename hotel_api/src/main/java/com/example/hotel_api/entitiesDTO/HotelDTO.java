@@ -16,9 +16,11 @@ public class HotelDTO {
     private String id;
     private String name;
     private Location location;
+    private double absPrice;
     private int start;
     private double vote;
     private int vote_total;
+    private String description;
     private List<String> images;
     private List<RoomDTO> rooms;
 }
