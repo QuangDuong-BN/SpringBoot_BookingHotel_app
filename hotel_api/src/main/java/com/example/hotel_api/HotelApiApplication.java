@@ -100,41 +100,41 @@ public class HotelApiApplication {
         listImageHotel.add(base64Image3);
 
         List<RoomDTO> list_room_ks01 = new ArrayList<>();
-        List<String> listimageht1 = new ArrayList<>();
-        listimageht1.add(ConvertoBase64.convertoBase64_method("h2.jpg"));
-        listimageht1.add(ConvertoBase64.convertoBase64_method("h3.jpg"));
-        list_room_ks01.add(new RoomDTO("1", "ks01", "P124", "Executive", 1, 3, (double) 5000000, false, des, listimageht1));
-        List<String> listimageht2 = new ArrayList<>();
-        listimageht2.add(ConvertoBase64.convertoBase64_method("h4.jpg"));
-        listimageht2.add(ConvertoBase64.convertoBase64_method("h5.jpg"));
-        list_room_ks01.add(new RoomDTO("2", "ks01", "P125", "Executive", 1, 2, 500000, true, des, listimageht2));
-        List<String> listimageht3 = new ArrayList<>();
-        listimageht3.add(ConvertoBase64.convertoBase64_method("h6.jpg"));
-        listimageht3.add(ConvertoBase64.convertoBase64_method("h7.jpg"));
-        list_room_ks01.add(new RoomDTO("3", "ks01", "P126", "SingleRoom", 1, 1, 500000, true, des, listimageht3));
-        List<String> listimageht4 = new ArrayList<>();
-        listimageht4.add(ConvertoBase64.convertoBase64_method("h8.jpg"));
-        listimageht4.add(ConvertoBase64.convertoBase64_method("h5.jpg"));
-        list_room_ks01.add(new RoomDTO("4", "ks01", "P127", "DoubleRoom", 1, 2, 500000, false, des, listimageht4));
-        List<String> listimageht5 = new ArrayList<>();
-        listimageht5.add(ConvertoBase64.convertoBase64_method("h9.jpg"));
-        listimageht5.add(ConvertoBase64.convertoBase64_method("h10.jpg"));
-        list_room_ks01.add(new RoomDTO("5", "ks01", "P129", "DoubleRoom", 1, 2, 500000, true, des, listimageht5));
+        List<String> listimageRoom1 = new ArrayList<>();
+        listimageRoom1.add(ConvertoBase64.convertoBase64_method("room1.jpg"));
+        listimageRoom1.add(ConvertoBase64.convertoBase64_method("room2.jpg"));
+        list_room_ks01.add(new RoomDTO("1", "ks01", "P124", "Executive", 1, 3, (double) 5000000, false, des, listimageRoom1));
+        List<String> listimageRoom2 = new ArrayList<>();
+        listimageRoom2.add(ConvertoBase64.convertoBase64_method("room3.jpg"));
+        listimageRoom2.add(ConvertoBase64.convertoBase64_method("room4.jpg"));
+        list_room_ks01.add(new RoomDTO("2", "ks01", "P125", "Executive", 1, 2, 500000, true, des, listimageRoom2));
+        List<String> listimageRoom3 = new ArrayList<>();
+        listimageRoom3.add(ConvertoBase64.convertoBase64_method("room5.jpg"));
+        listimageRoom3.add(ConvertoBase64.convertoBase64_method("room6.jpg"));
+        list_room_ks01.add(new RoomDTO("3", "ks01", "P126", "SingleRoom", 1, 1, 500000, true, des, listimageRoom3));
+        List<String> listimageRoom4 = new ArrayList<>();
+        listimageRoom4.add(ConvertoBase64.convertoBase64_method("room7.jpg"));
+        listimageRoom4.add(ConvertoBase64.convertoBase64_method("room8.jpg"));
+        list_room_ks01.add(new RoomDTO("4", "ks01", "P127", "DoubleRoom", 1, 2, 500000, false, des, listimageRoom4));
+        List<String> listimageRoom5 = new ArrayList<>();
+        listimageRoom5.add(ConvertoBase64.convertoBase64_method("room9.jpg"));
+        listimageRoom5.add(ConvertoBase64.convertoBase64_method("room10.jpg"));
+        list_room_ks01.add(new RoomDTO("5", "ks01", "P129", "DoubleRoom", 1, 2, 500000, true, des, listimageRoom5));
 
 
         List<RoomDTO> list_room_ks02 = new ArrayList<>();
-        list_room_ks02.add(new RoomDTO("6", "ks02", "P124", "Executive", 1, 3, (double) 5000000, true, des, listUrl));
-        list_room_ks02.add(new RoomDTO("7", "ks02", "P125", "Executive", 1, 2, 500000, true, des, listUrl));
-        list_room_ks02.add(new RoomDTO("8", "ks02", "P126", "SingleRoom", 1, 1, 500000, true, des, listUrl));
-        list_room_ks02.add(new RoomDTO("9", "ks02", "P127", "SingleRoom", 1, 1, 500000, true, des, listUrl));
-        list_room_ks02.add(new RoomDTO("10", "ks02", "P129", "DoubleRoom", 1, 2, 500000, true, des, listUrl));
+        list_room_ks02.add(new RoomDTO("6", "ks02", "P124", "Executive", 1, 3, (double) 5000000, true, des, listimageRoom1));
+        list_room_ks02.add(new RoomDTO("7", "ks02", "P125", "Executive", 1, 2, 500000, true, des, listimageRoom2));
+        list_room_ks02.add(new RoomDTO("8", "ks02", "P126", "SingleRoom", 1, 1, 500000, true, des, listimageRoom3));
+        list_room_ks02.add(new RoomDTO("9", "ks02", "P127", "SingleRoom", 1, 1, 500000, true, des, listimageRoom4));
+        list_room_ks02.add(new RoomDTO("10", "ks02", "P129", "DoubleRoom", 1, 2, 500000, true, des, listimageRoom5));
 
         List<RoomDTO> list_room_ks03 = new ArrayList<>();
-        list_room_ks02.add(new RoomDTO("10", "ks03", "P124", "Executive", 1, 3, (double) 5000000, true, des, listUrl));
-        list_room_ks02.add(new RoomDTO("11", "ks03", "P125", "Executive", 1, 2, 500000, true, des, listUrl));
-        list_room_ks02.add(new RoomDTO("12", "ks03", "P126", "SingleRoom", 1, 1, 500000, true, des, listUrl));
-        list_room_ks02.add(new RoomDTO("13", "ks03", "P127", "SingleRoom", 1, 1, 500000, true, des, listUrl));
-        list_room_ks02.add(new RoomDTO("14", "ks03", "P129", "DoubleRoom", 1, 2, 500000, true, des, listUrl));
+        list_room_ks03.add(new RoomDTO("10", "ks03", "P124", "Executive", 1, 3, (double) 5000000, true, des, listimageRoom1));
+        list_room_ks03.add(new RoomDTO("11", "ks03", "P125", "Executive", 1, 2, 500000, true, des, listimageRoom2));
+        list_room_ks03.add(new RoomDTO("12", "ks03", "P126", "SingleRoom", 1, 1, 500000, true, des, listimageRoom3));
+        list_room_ks03.add(new RoomDTO("13", "ks03", "P127", "SingleRoom", 1, 1, 500000, true, des, listimageRoom4));
+        list_room_ks03.add(new RoomDTO("14", "ks03", "P129", "DoubleRoom", 1, 2, 500000, true, des, listimageRoom5));
 
         List<RoomDTO> list_room_ks04 = new ArrayList<>();
         String des1 = "Khách sạn XXX là một điểm đến tuyệt vời cho du khách muốn tận hưởng sự tiện nghi và không gian sang trọng. // Với nội thất hiện đại và phòng ngủ rộng rãi, khách sạn XYZ đảm bảo bạn có một trải nghiệm lưu trú thoải mái và tiện nghi.";
@@ -142,12 +142,23 @@ public class HotelApiApplication {
         String des3 = "Khách sạn XXX cam kết mang đến sự hài lòng và trải nghiệm lưu trú đáng nhớ cho du khách, với dịch vụ chất lượng và không gian ấm cúng. // Với không gian nghỉ ngơi thoải mái và view đẹp, khách sạn XXX là nơi lý tưởng để thưởng thức không gian yên tĩnh và tận hưởng không khí thư giãn.";
 
 
+        List<String> listImageHotel1=new ArrayList<>();
+        listImageHotel1.add(ConvertoBase64.convertoBase64_method("h4.jpg"));
+        listImageHotel1.add(ConvertoBase64.convertoBase64_method("h5.jpg"));
 
-        hotelController.arrayList.add(new HotelDTO("ks01", "SMARANA Hanoi", new Location("Hà Nội", "Hoàn Kiếm", "Số 95 đường 16"), 500000, 5, 8.0, 50, des1, listImageHotel, list_room_ks01));
-        hotelController.arrayList.add(new HotelDTO("ks02", "Pullman Hanoi", new Location("Hà Nội", "Hoàn Kiếm", "Số 9 đường 16"), 500000, 5, 8.0, 50, des2, listImageHotel, list_room_ks02));
-        hotelController.arrayList.add(new HotelDTO("ks03", "Alula Sweet Home", new Location("Hà Nội", "Hoàn Kiếm", "Số 97 đường 16"), 500000, 5, 8.0, 50, des3, listImageHotel, list_room_ks03));
-        hotelController.arrayList.add(new HotelDTO("ks04", "Melia Hanoi", new Location("Hà Nội", "Hoàn Kiếm", "Số 10 đường 16"), 500000, 5, 8.0, 50, des2, listImageHotel, list_room_ks03));
-        hotelController.arrayList.add(new HotelDTO("ks05", "Mường Thanh", new Location("Hà Nội", "Hoàn Kiếm", "Số 5 đường 16"), 500000, 5, 8.0, 50, des3, listImageHotel, list_room_ks02));
+        List<String> listImageHotel2=new ArrayList<>();
+        listImageHotel2.add(ConvertoBase64.convertoBase64_method("h6.jpg"));
+        listImageHotel2.add(ConvertoBase64.convertoBase64_method("h7.jpg"));
+
+        List<String> listImageHotel3=new ArrayList<>();
+        listImageHotel2.add(ConvertoBase64.convertoBase64_method("h1.jpg"));
+        listImageHotel2.add(ConvertoBase64.convertoBase64_method("h2.jpg"));
+
+        hotelController.arrayList.add(new HotelDTO("ks01", "SMARANA Hanoi", new Location("Hà Nội", "Hoàn Kiếm", "Số 95 đường 16"), 500000, 5, 8.0, 50, des1, listImageHotel1, list_room_ks01));
+        hotelController.arrayList.add(new HotelDTO("ks02", "Pullman Hanoi", new Location("Hà Nội", "Hoàn Kiếm", "Số 9 đường 16"), 500000, 5, 8.0, 50, des2, listImageHotel2, list_room_ks02));
+        hotelController.arrayList.add(new HotelDTO("ks03", "Alula Sweet Home", new Location("Hà Nội", "Hoàn Kiếm", "Số 97 đường 16"), 500000, 5, 8.0, 50, des3, listImageHotel3, list_room_ks03));
+        hotelController.arrayList.add(new HotelDTO("ks04", "Melia Hanoi", new Location("Hà Nội", "Hoàn Kiếm", "Số 10 đường 16"), 500000, 5, 8.0, 50, des2, listImageHotel2, list_room_ks01));
+        hotelController.arrayList.add(new HotelDTO("ks05", "Mường Thanh", new Location("Hà Nội", "Hoàn Kiếm", "Số 5 đường 16"), 500000, 5, 8.0, 50, des3, listImageHotel3, list_room_ks02));
 
 
         CustomerController customerController = context.getBean(CustomerController.class);
