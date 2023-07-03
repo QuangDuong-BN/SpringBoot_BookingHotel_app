@@ -125,11 +125,11 @@ public class HotelApiApplication {
         String des2 = "Khách sạn XXX nằm trong khu vực trung tâm, mang đến sự thuận tiện cho việc khám phá các điểm tham quan, nhà hàng và cửa hàng mua sắm. // Đội ngũ nhân viên thân thiện và chuyên nghiệp tại khách sạn XXX sẽ đảm bảo bạn nhận được dịch vụ tận tâm và hài lòng";
         String des3 = "Khách sạn XXX cam kết mang đến sự hài lòng và trải nghiệm lưu trú đáng nhớ cho du khách, với dịch vụ chất lượng và không gian ấm cúng. // Với không gian nghỉ ngơi thoải mái và view đẹp, khách sạn XXX là nơi lý tưởng để thưởng thức không gian yên tĩnh và tận hưởng không khí thư giãn.";
 
-        hotelController.arrayList.add(new HotelDTO("ks01", "SMARANA Hanoi", new Location("Hà Nội", "Hoàn Kiếm", "Số 95 đường 16"),500000, 5, 8.0, 50, des1, listImageHotel, list_room_ks01));
-        hotelController.arrayList.add(new HotelDTO("ks02", "Pullman Hanoi", new Location("Hà Nội", "Hoàn Kiếm", "Số 9 đường 16"),500000, 5, 8.0, 50,des2, listImageHotel, list_room_ks02));
-        hotelController.arrayList.add(new HotelDTO("ks03", "Alula Sweet Home", new Location("Hà Nội", "Hoàn Kiếm", "Số 97 đường 16"),500000, 5, 8.0, 50,des3, listImageHotel, list_room_ks03));
-        hotelController.arrayList.add(new HotelDTO("ks04", "Melia Hanoi", new Location("Hà Nội", "Hoàn Kiếm", "Số 10 đường 16"),500000, 5, 8.0, 50,des2, listImageHotel, list_room_ks03));
-        hotelController.arrayList.add(new HotelDTO("ks05", "Mường Thanh", new Location("Hà Nội", "Hoàn Kiếm", "Số 5 đường 16"),500000, 5, 8.0, 50,des3, listImageHotel, list_room_ks02));
+        hotelController.arrayList.add(new HotelDTO("ks01", "SMARANA Hanoi", new Location("Hà Nội", "Hoàn Kiếm", "Số 95 đường 16"), 500000, 5, 8.0, 50, des1, listImageHotel, list_room_ks01));
+        hotelController.arrayList.add(new HotelDTO("ks02", "Pullman Hanoi", new Location("Hà Nội", "Hoàn Kiếm", "Số 9 đường 16"), 500000, 5, 8.0, 50, des2, listImageHotel, list_room_ks02));
+        hotelController.arrayList.add(new HotelDTO("ks03", "Alula Sweet Home", new Location("Hà Nội", "Hoàn Kiếm", "Số 97 đường 16"), 500000, 5, 8.0, 50, des3, listImageHotel, list_room_ks03));
+        hotelController.arrayList.add(new HotelDTO("ks04", "Melia Hanoi", new Location("Hà Nội", "Hoàn Kiếm", "Số 10 đường 16"), 500000, 5, 8.0, 50, des2, listImageHotel, list_room_ks03));
+        hotelController.arrayList.add(new HotelDTO("ks05", "Mường Thanh", new Location("Hà Nội", "Hoàn Kiếm", "Số 5 đường 16"), 500000, 5, 8.0, 50, des3, listImageHotel, list_room_ks02));
 
 
         CustomerController customerController = context.getBean(CustomerController.class);
@@ -152,6 +152,67 @@ public class HotelApiApplication {
         date1 = java.sql.Date.valueOf("2023-06-19");
         date2 = java.sql.Date.valueOf("2023-06-22");
         bookingController.arrayListBooking.add(new BookingDTO("2", "kh2", "Huyen", "0944381904", "ks01", "4", "DoubleRoom", "P127", date1, date2, 4000000));
+
+        date1 = java.sql.Date.valueOf("2023-01-19");
+        date2 = java.sql.Date.valueOf("2023-01-23");
+        bookingController.arrayListBooking.add(new BookingDTO("3", "kh2", "Huyen", "0944381904", "ks01", "4", "DoubleRoom", "P127", date1, date2, 5000000));
+
+        date1 = java.sql.Date.valueOf("2023-01-19");
+        date2 = java.sql.Date.valueOf("2023-01-23");
+        bookingController.arrayListBooking.add(new BookingDTO("4", "kh2", "Huyen", "0944381904", "ks01", "4", "DoubleRoom", "P127", date1, date2, 5000000));
+
+        date1 = java.sql.Date.valueOf("2023-01-10");
+        date2 = java.sql.Date.valueOf("2023-01-10");
+        bookingController.arrayListBooking.add(new BookingDTO("5", "kh2", "Huyen", "0944381904", "ks01", "4", "DoubleRoom", "P127", date1, date2, 11000000));
+
+        date1 = java.sql.Date.valueOf("2023-02-10");
+        date2 = java.sql.Date.valueOf("2023-02-20");
+        bookingController.arrayListBooking.add(new BookingDTO("6", "kh2", "Huyen", "0944381904", "ks01", "4", "DoubleRoom", "P127", date1, date2, 11000000));
+
+        date1 = java.sql.Date.valueOf("2023-03-10");
+        date2 = java.sql.Date.valueOf("2023-03-20");
+        bookingController.arrayListBooking.add(new BookingDTO("7", "kh2", "Huyen", "0944381904", "ks01", "4", "DoubleRoom", "P127", date1, date2, 11000000));
+
+        date1 = java.sql.Date.valueOf("2023-03-10");
+        date2 = java.sql.Date.valueOf("2023-03-21");
+        bookingController.arrayListBooking.add(new BookingDTO("8", "kh2", "Huyen", "0944381904", "ks01", "4", "DoubleRoom", "P127", date1, date2, 12000000));
+
+        date1 = java.sql.Date.valueOf("2023-03-01");
+        date2 = java.sql.Date.valueOf("2023-03-11");
+        bookingController.arrayListBooking.add(new BookingDTO("9", "kh2", "Huyen", "0944381904", "ks01", "4", "DoubleRoom", "P127", date1, date2, 11000000));
+
+        date1 = java.sql.Date.valueOf("2023-04-10");
+        date2 = java.sql.Date.valueOf("2023-04-20");
+        bookingController.arrayListBooking.add(new BookingDTO("10", "kh2", "Huyen", "0944381904", "ks01", "4", "DoubleRoom", "P127", date1, date2, 11000000));
+
+        date1 = java.sql.Date.valueOf("2023-05-10");
+        date2 = java.sql.Date.valueOf("2023-05-20");
+        bookingController.arrayListBooking.add(new BookingDTO("11", "kh2", "Huyen", "0944381904", "ks01", "4", "DoubleRoom", "P127", date1, date2, 11000000));
+
+        date1 = java.sql.Date.valueOf("2023-05-01");
+        date2 = java.sql.Date.valueOf("2023-05-09");
+        bookingController.arrayListBooking.add(new BookingDTO("12", "kh2", "Huyen", "0944381904", "ks01", "4", "DoubleRoom", "P127", date1, date2, 9000000));
+
+
+        date1 = java.sql.Date.valueOf("2023-06-10");
+        date2 = java.sql.Date.valueOf("2023-06-17");
+        bookingController.arrayListBooking.add(new BookingDTO("13", "kh2", "Huyen", "0944381904", "ks01", "4", "DoubleRoom", "P127", date1, date2, 8000000));
+
+        date1 = java.sql.Date.valueOf("2023-06-01");
+        date2 = java.sql.Date.valueOf("2023-06-09");
+        bookingController.arrayListBooking.add(new BookingDTO("14", "kh2", "Huyen", "0944381904", "ks01", "4", "DoubleRoom", "P127", date1, date2, 9000000));
+
+        date1 = java.sql.Date.valueOf("2023-06-01");
+        date2 = java.sql.Date.valueOf("2023-06-09");
+        bookingController.arrayListBooking.add(new BookingDTO("15", "kh2", "Huyen", "0944381904", "ks01", "4", "DoubleRoom", "P127", date1, date2, 9000000));
+
+        date1 = java.sql.Date.valueOf("2023-06-01");
+        date2 = java.sql.Date.valueOf("2023-06-09");
+        bookingController.arrayListBooking.add(new BookingDTO("16", "kh2", "Huyen", "0944381904", "ks01", "4", "DoubleRoom", "P127", date1, date2, 9000000));
+
+        date1 = java.sql.Date.valueOf("2023-07-01");
+        date2 = java.sql.Date.valueOf("2023-07-09");
+        bookingController.arrayListBooking.add(new BookingDTO("17", "kh2", "Huyen", "0944381904", "ks01", "4", "DoubleRoom", "P127", date1, date2, 9000000));
 
 
         FileDownloadController downloadFileController = context.getBean(FileDownloadController.class);

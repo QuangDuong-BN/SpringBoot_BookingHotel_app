@@ -20,5 +20,4 @@ public class BookingDTO {
     private java.sql.Date start_date;
     private java.sql.Date end_date;
     private double price;
-
 }
