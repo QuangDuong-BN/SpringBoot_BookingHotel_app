@@ -1,8 +1,5 @@
 package com.example.hotel_api.controller;
 
-import com.example.hotel_api.entities.Booking;
-import com.example.hotel_api.entities.Customer;
-import com.example.hotel_api.entities.Hotel;
 import com.example.hotel_api.entitiesDTO.BookingDTO;
 import com.example.hotel_api.entitiesDTO.HotelDTO;
 import com.example.hotel_api.entitiesDTO.RoomDTO;
@@ -14,7 +11,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.example.hotel_api.controller.HotelController.arrayList;
+import static com.example.hotel_api.controller.HotelController.arrayListHotel;
 
 @RestController
 @RequestMapping("/booking")
@@ -37,8 +34,8 @@ public class BookingController {
 
     @PostMapping
     public BookingDTO create(@RequestBody BookingDTO booking) {
-        for (int i= 0; i < arrayList.size(); i++){
-            HotelDTO hotel = arrayList.get(i);
+        for (int i = 0; i < arrayListHotel.size(); i++){
+            HotelDTO hotel = arrayListHotel.get(i);
             if (hotel.getId().equals(booking.getHotel_id())){
                 List<RoomDTO> rooms = hotel.getRooms();
                 for (int j = 0; j< rooms.size(); j++){
@@ -54,6 +51,24 @@ public class BookingController {
 
     @DeleteMapping()
     public void delete(@RequestParam("id") String id) {
+
+        BookingDTO bookingDTO = null;
+        for(int i=0;i<arrayListBooking.size();i++){
+            if(arrayListBooking.get(i).getId().equals(id)){
+                bookingDTO=arrayListBooking.get(i);
+            }
+        }
+        for (int i = 0; i < arrayListHotel.size(); i++){
+            HotelDTO hotel = arrayListHotel.get(i);
+            if (hotel.getId().equals(bookingDTO.getHotel_id())){
+                List<RoomDTO> rooms = hotel.getRooms();
+                for (int j = 0; j< rooms.size(); j++){
+                    if (rooms.get(j).equals(bookingDTO.getRoom_id())){
+                        rooms.get(j).setStatus(!rooms.get(j).isStatus());
+                    }
+                }
+            }
+        }
         arrayListBooking.removeIf(arrayListBooking -> arrayListBooking.getId().equals(id));
     }
 

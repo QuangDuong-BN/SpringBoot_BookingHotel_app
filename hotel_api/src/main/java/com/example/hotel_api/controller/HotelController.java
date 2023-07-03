@@ -1,10 +1,6 @@
 package com.example.hotel_api.controller;
 
-import com.example.hotel_api.entities.Booking;
-import com.example.hotel_api.entities.Hotel;
-import com.example.hotel_api.entitiesDTO.CustomerDTO;
 import com.example.hotel_api.entitiesDTO.HotelDTO;
-import com.example.hotel_api.entitiesDTO.HotelListRoomName;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -13,18 +9,18 @@ import java.util.List;
 @RestController
 @RequestMapping("/hotel")
 public class HotelController {
-    public static ArrayList<HotelDTO> arrayList = new ArrayList<>();
+    public static ArrayList<HotelDTO> arrayListHotel = new ArrayList<>();
 
     @GetMapping("/list")
     public List<HotelDTO> getHotel1() {
-        return arrayList;
+        return arrayListHotel;
     }
 
     @GetMapping("/listnamehotel")
     public List<String> getNameHotel() {
         List<String> listName = new ArrayList<>();
-        for (int i = 0; i < arrayList.size(); i++) {
-            listName.add(arrayList.get(i).getName());
+        for (int i = 0; i < arrayListHotel.size(); i++) {
+            listName.add(arrayListHotel.get(i).getName());
         }
         return listName;
     }
@@ -32,18 +28,18 @@ public class HotelController {
     @GetMapping("/listidhotel")
     public List<String> getIdHotel() {
         List<String> listName = new ArrayList<>();
-        for (int i = 0; i < arrayList.size(); i++) {
-            listName.add(arrayList.get(i).getId());
+        for (int i = 0; i < arrayListHotel.size(); i++) {
+            listName.add(arrayListHotel.get(i).getId());
         }
         return listName;
     }
 
     @GetMapping()
     public HotelDTO getHotel2(@RequestParam("id") String id) {
-        int size = arrayList.size();
+        int size = arrayListHotel.size();
         for (int i = 0; i < size; i++) {
-            if (id.equals(arrayList.get(i).getId())) {
-                return arrayList.get(i);
+            if (id.equals(arrayListHotel.get(i).getId())) {
+                return arrayListHotel.get(i);
             }
         }
         return null;
@@ -51,10 +47,10 @@ public class HotelController {
 
     @GetMapping("/namehotel")
     public String getNameHotel(@RequestParam("id") String id) {
-        int size = arrayList.size();
+        int size = arrayListHotel.size();
         for (int i = 0; i < size; i++) {
-            if (id.equals(arrayList.get(i).getId())) {
-                return arrayList.get(i).getName();
+            if (id.equals(arrayListHotel.get(i).getId())) {
+                return arrayListHotel.get(i).getName();
             }
         }
         return null;
@@ -62,13 +58,13 @@ public class HotelController {
 
     @PostMapping
     public HotelDTO create(@RequestBody HotelDTO hotel) {
-        arrayList.add(hotel);
+        arrayListHotel.add(hotel);
         return hotel;
     }
 
     @DeleteMapping()
     public void delete(@RequestParam("id") String id) {
-        arrayList.removeIf(arrayList -> arrayList.getId().equals(id));
+        arrayListHotel.removeIf(arrayList -> arrayList.getId().equals(id));
     }
 
 
