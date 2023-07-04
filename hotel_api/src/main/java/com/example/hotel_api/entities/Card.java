@@ -15,7 +15,7 @@ public class Card {
     private String card_number;
     private String name_customer;
     private java.sql.Date date_end;
-    private String cvv;
+    private String pin_code;
     private String bank_name;
 
 }
