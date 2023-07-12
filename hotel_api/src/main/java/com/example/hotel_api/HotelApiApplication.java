@@ -26,7 +26,28 @@ public class HotelApiApplication {
     public static void main(String[] args) {
 
         ApplicationContext context = SpringApplication.run(HotelApiApplication.class, args);
+        ///
+        System.out.println("ket quan truy van:");
+        CustomerService customerService =context.getBean(CustomerService.class);
+        Customer customer=customerService.getUserById((long)1);
+        System.out.println(customer.toString());
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        /*
         BankcardController bankcardController = context.getBean(BankcardController.class);
 
         HotelController hotelController = context.getBean(HotelController.class);
@@ -235,67 +256,7 @@ public class HotelApiApplication {
         date1 = java.sql.Date.valueOf("2023-07-01");
         date2 = java.sql.Date.valueOf("2023-07-09");
         bookingController.arrayListBooking.add(new BookingDTO("17", "654", "Tuyer", "0944381904", "ks01", "987524", "DoubleRoom", "P127", date1, date2, 9000000));
-
-
-        FileDownloadController downloadFileController = context.getBean(FileDownloadController.class);
-        downloadFileController.arrayListImageData.add(new ImageData("1", "ks01", "h1.jpg"));
-        downloadFileController.arrayListImageData.add(new ImageData("5", "ks01", "h2.jpg"));
-        downloadFileController.arrayListImageData.add(new ImageData("6", "ks01", "h3.jpg"));
-
-        downloadFileController.arrayListImageData.add(new ImageData("1", "ks02", "h1.jpg"));
-        downloadFileController.arrayListImageData.add(new ImageData("5", "ks02", "h2.jpg"));
-        downloadFileController.arrayListImageData.add(new ImageData("6", "ks02", "h3.jpg"));
-
-        downloadFileController.arrayListImageData.add(new ImageData("1", "ks03", "h1.jpg"));
-        downloadFileController.arrayListImageData.add(new ImageData("5", "ks03", "h2.jpg"));
-        downloadFileController.arrayListImageData.add(new ImageData("6", "ks03", "h3.jpg"));
-
-        downloadFileController.arrayListImageData.add(new ImageData("1", "ks04", "h1.jpg"));
-        downloadFileController.arrayListImageData.add(new ImageData("5", "ks04", "h2.jpg"));
-        downloadFileController.arrayListImageData.add(new ImageData("6", "ks04", "h3.jpg"));
-
-        downloadFileController.arrayListImageData.add(new ImageData("1", "ks05", "h1.jpg"));
-        downloadFileController.arrayListImageData.add(new ImageData("5", "ks05", "h2.jpg"));
-        downloadFileController.arrayListImageData.add(new ImageData("6", "ks05", "h3.jpg"));
-
-
-        downloadFileController.arrayListImageData.add(new ImageData("6", "1", "room1.jpg"));
-        downloadFileController.arrayListImageData.add(new ImageData("6", "1", "room2.jpg"));
-        downloadFileController.arrayListImageData.add(new ImageData("6", "1", "room3.jpg"));
-        downloadFileController.arrayListImageData.add(new ImageData("6", "1", "room4.jpg"));
-        downloadFileController.arrayListImageData.add(new ImageData("6", "1", "room5.jpg"));
-        downloadFileController.arrayListImageData.add(new ImageData("6", "1", "room6.jpg"));
-        downloadFileController.arrayListImageData.add(new ImageData("6", "1", "room7.jpg"));
-
-        downloadFileController.arrayListImageData.add(new ImageData("6", "2", "room1.jpg"));
-        downloadFileController.arrayListImageData.add(new ImageData("6", "2", "room2.jpg"));
-        downloadFileController.arrayListImageData.add(new ImageData("6", "2", "room3.jpg"));
-        downloadFileController.arrayListImageData.add(new ImageData("6", "2", "room4.jpg"));
-        downloadFileController.arrayListImageData.add(new ImageData("6", "2", "room5.jpg"));
-        downloadFileController.arrayListImageData.add(new ImageData("6", "2", "room6.jpg"));
-        downloadFileController.arrayListImageData.add(new ImageData("6", "2", "room7.jpg"));
-
-        downloadFileController.arrayListImageData.add(new ImageData("6", "3", "room1.jpg"));
-        downloadFileController.arrayListImageData.add(new ImageData("6", "3", "room2.jpg"));
-        downloadFileController.arrayListImageData.add(new ImageData("6", "3", "room3.jpg"));
-        downloadFileController.arrayListImageData.add(new ImageData("6", "3", "room4.jpg"));
-        downloadFileController.arrayListImageData.add(new ImageData("6", "3", "room5.jpg"));
-        downloadFileController.arrayListImageData.add(new ImageData("6", "3", "room6.jpg"));
-        downloadFileController.arrayListImageData.add(new ImageData("6", "3", "room7.jpg"));
-
-        downloadFileController.arrayListImageData.add(new ImageData("6", "4", "room7.jpg"));
-        downloadFileController.arrayListImageData.add(new ImageData("6", "4", "room7.jpg"));
-        downloadFileController.arrayListImageData.add(new ImageData("6", "4", "room7.jpg"));
-
-        downloadFileController.arrayListImageData.add(new ImageData("6", "5", "room7.jpg"));
-        downloadFileController.arrayListImageData.add(new ImageData("6", "5", "room7.jpg"));
-        downloadFileController.arrayListImageData.add(new ImageData("6", "5", "room7.jpg"));
-
-        downloadFileController.arrayListImageData.add(new ImageData("6", "6", "room7.jpg"));
-        downloadFileController.arrayListImageData.add(new ImageData("6", "6", "room7.jpg"));
-        downloadFileController.arrayListImageData.add(new ImageData("6", "6", "room7.jpg"));
-
-
+        */
     }
 
 }
