@@ -7,6 +7,10 @@ import com.example.hotel_api.entitiesDTO.CustomerDTO;
 import com.example.hotel_api.entitiesDTO.HotelDTO;
 import com.example.hotel_api.entitiesDTO.RoomDTO;
 import com.example.hotel_api.staticmethod.ConvertoBase64;
+import io.swagger.v3.oas.annotations.OpenAPIDefinition;
+import io.swagger.v3.oas.annotations.info.Contact;
+import io.swagger.v3.oas.annotations.info.Info;
+import io.swagger.v3.oas.annotations.info.License;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -20,16 +24,33 @@ import java.util.List;
 import java.util.Base64;
 
 
+
 @SpringBootApplication()
+@OpenAPIDefinition(
+        info = @Info(
+                title = "API app hotel",
+                version = "1.0.0",
+                description = "Api sử dụng trong app khách sạn.",
+                contact = @Contact(
+                        name = "QuangDuong",
+                        email = "quangduong19992001@gmail.com"
+                ),
+                license = @License(
+                        name = "Link: license ",
+                        url = "https://www.youtube.com/watch?v=m1M1V9hdL3c"
+                )
+        )
+)
 public class HotelApiApplication {
 
     public static void main(String[] args) {
 
         ApplicationContext context = SpringApplication.run(HotelApiApplication.class, args);
-        ///
+
+        //
         System.out.println("ket quan truy van:");
-        CustomerService customerService =context.getBean(CustomerService.class);
-        Customer customer=customerService.getUserById((long)1);
+        CustomerService customerService = context.getBean(CustomerService.class);
+        Customer customer = customerService.getUserById((long) 1);
         System.out.println(customer.toString());
 
 
@@ -37,17 +58,6 @@ public class HotelApiApplication {
 
 
 
-
-
-
-
-
-
-
-
-
-
-        /*
         BankcardController bankcardController = context.getBean(BankcardController.class);
 
         HotelController hotelController = context.getBean(HotelController.class);
@@ -256,7 +266,7 @@ public class HotelApiApplication {
         date1 = java.sql.Date.valueOf("2023-07-01");
         date2 = java.sql.Date.valueOf("2023-07-09");
         bookingController.arrayListBooking.add(new BookingDTO("17", "654", "Tuyer", "0944381904", "ks01", "987524", "DoubleRoom", "P127", date1, date2, 9000000));
-        */
+
     }
 
 }
