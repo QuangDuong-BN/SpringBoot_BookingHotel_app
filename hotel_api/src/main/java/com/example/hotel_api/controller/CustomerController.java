@@ -3,6 +3,7 @@ package com.example.hotel_api.controller;
 import com.example.hotel_api.entities.Customer;
 import com.example.hotel_api.entitiesDTO.CusLogin;
 import com.example.hotel_api.entitiesDTO.CustomerDTO;
+import io.swagger.v3.oas.annotations.Operation;
 import jdk.jfr.Description;
 import org.springframework.web.bind.annotation.*;
 
@@ -36,6 +37,11 @@ public class CustomerController {
         return customer;
     }
 
+    @Operation(
+            summary = "api đăng nhập",
+            description = "trả về null nếu đăng nhập thất bại , trả về id của tài khoản đăng nhập \nnếu đăng nhập thành công"
+
+    )
     @GetMapping("/login")
     public String login(@RequestParam("phone") String phone, @RequestParam("password") String password) {
 

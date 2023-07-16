@@ -53,9 +53,8 @@ public class HotelApiApplication {
         Customer customer = customerService.getUserById((long) 1);
         System.out.println(customer.toString());
 
-
-
-
+        System.out.println("ket quan truy van:");
+        System.out.println(customer.toString());
 
 
         BankcardController bankcardController = context.getBean(BankcardController.class);
