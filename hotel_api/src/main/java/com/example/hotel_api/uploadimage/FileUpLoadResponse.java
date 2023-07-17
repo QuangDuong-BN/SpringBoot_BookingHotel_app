@@ -1,13 +1,13 @@
 package com.example.hotel_api.uploadimage;
 
-public class FileUpLoadResponese {
+public class FileUpLoadResponse {
     private String filename;
-    private String dowloadUri;
+    private String downloadUri;
     private long size;
 
-    public FileUpLoadResponese(String filename, String dowloadUri, long size) {
+    public FileUpLoadResponse(String filename, String dowloadUri, long size) {
         this.filename = filename;
-        this.dowloadUri = dowloadUri;
+        this.downloadUri = dowloadUri;
         this.size = size;
     }
 
@@ -19,12 +19,12 @@ public class FileUpLoadResponese {
         this.filename = filename;
     }
 
-    public String getDowloadUri() {
-        return dowloadUri;
+    public String getDownloadUri() {
+        return downloadUri;
     }
 
-    public void setDowloadUri(String dowloadUri) {
-        this.dowloadUri = dowloadUri;
+    public void setDownloadUri(String downloadUri) {
+        this.downloadUri = downloadUri;
     }
 
     public long getSize() {

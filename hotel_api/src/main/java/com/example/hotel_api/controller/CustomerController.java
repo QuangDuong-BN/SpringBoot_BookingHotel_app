@@ -1,10 +1,10 @@
 package com.example.hotel_api.controller;
 
 import com.example.hotel_api.entities.Customer;
-import com.example.hotel_api.entitiesDTO.CusLogin;
+import com.example.hotel_api.entities.CustomerRepository;
+import com.example.hotel_api.entities.CustomerService;
 import com.example.hotel_api.entitiesDTO.CustomerDTO;
 import io.swagger.v3.oas.annotations.Operation;
-import jdk.jfr.Description;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -15,6 +15,8 @@ import java.util.List;
 @RequestMapping("/customer")
 public class CustomerController {
     public List<CustomerDTO> arrayListCustomer = new ArrayList<>();
+    CustomerService customerService;
+    CustomerRepository customerRepository;
 
     @GetMapping("/list")
     public List<CustomerDTO> getCustomer() {
@@ -24,9 +26,12 @@ public class CustomerController {
 
     @GetMapping()
     public CustomerDTO getUser(@RequestParam("id") String id) {
+        Customer customer;
         for (int i = 0; i < arrayListCustomer.size(); i++) {
-            if (id.equals(arrayListCustomer.get(i).getId()))
+            if (id.equals(arrayListCustomer.get(i).getId())) {
+                customer = customerService.getUserById((long) 1);
                 return arrayListCustomer.get(i);
+            }
         }
         return new CustomerDTO();
     }
@@ -39,8 +44,7 @@ public class CustomerController {
 
     @Operation(
             summary = "api đăng nhập",
-            description = "trả về null nếu đăng nhập thất bại , trả về id của tài khoản đăng nhập \nnếu đăng nhập thành công"
-
+            description = "trả về null nếu đăng nhập thất bại , trả về id của tài khoản đăng nhập nếu đăng nhập thành công"
     )
     @GetMapping("/login")
     public String login(@RequestParam("phone") String phone, @RequestParam("password") String password) {

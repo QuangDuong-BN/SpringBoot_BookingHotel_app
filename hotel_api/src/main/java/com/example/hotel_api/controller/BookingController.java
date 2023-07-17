@@ -4,6 +4,7 @@ import com.example.hotel_api.entitiesDTO.BookingDTO;
 import com.example.hotel_api.entitiesDTO.HotelDTO;
 import com.example.hotel_api.entitiesDTO.RoomDTO;
 import com.example.hotel_api.entitiesDTO.StatisticDTO;
+import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.web.bind.annotation.*;
 
 import java.sql.Date;
@@ -16,14 +17,17 @@ import static com.example.hotel_api.controller.HotelController.arrayListHotel;
 @RestController
 @RequestMapping("/booking")
 public class BookingController {
+
     public ArrayList<BookingDTO> arrayListBooking = new ArrayList<>();
 
     @GetMapping("/list")
+    @Operation(tags = "API booking")
     public List<BookingDTO> get1() {
         return arrayListBooking;
     }
 
     @GetMapping()
+    @Operation(tags = "API booking")
     public BookingDTO get2(@RequestParam("id") String id) {
         for (int i = 0; i < arrayListBooking.size(); i++) {
             if (id.equals(arrayListBooking.get(i).getId()))
@@ -33,6 +37,7 @@ public class BookingController {
     }
 
     @PostMapping
+    @Operation(tags = "API booking")
     public BookingDTO create(@RequestBody BookingDTO booking) {
         for (int i = 0; i < arrayListHotel.size(); i++) {
             HotelDTO hotel = arrayListHotel.get(i);
@@ -50,6 +55,7 @@ public class BookingController {
     }
 
     @DeleteMapping()
+    @Operation(tags = "API booking")
     public String delete(@RequestParam("id") String id) {
 
         BookingDTO bookingDTO = null;
@@ -74,6 +80,7 @@ public class BookingController {
     }
 
     @GetMapping("/month")
+    @Operation(tags = "API booking")
     public List<StatisticDTO> statisticBookByMonth() {
         List<StatisticDTO> statisticDTOList = new ArrayList<>();
         arrayListBooking.sort((o1, o2) -> {
@@ -103,6 +110,7 @@ public class BookingController {
     }
 
     @GetMapping("/bookingByCustomerId")
+    @Operation(tags = "API booking ")
     public ArrayList<BookingDTO> getById(@RequestParam("customer_id") String id) {
         ArrayList<BookingDTO> newArrayList = new ArrayList<>();
         for (int i = 0; i < arrayListBooking.size(); i++) {
