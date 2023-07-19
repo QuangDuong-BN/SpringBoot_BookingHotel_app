@@ -1,6 +1,6 @@
 package com.example.hotel_api.controller;
 
-import com.example.hotel_api.entitiesDTO.HotelDTO;
+import com.example.hotel_api.entitiesDTO.HotelDto;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -9,10 +9,10 @@ import java.util.List;
 @RestController
 @RequestMapping("/hotel")
 public class HotelController {
-    public static ArrayList<HotelDTO> arrayListHotel = new ArrayList<>();
+    public static ArrayList<HotelDto> arrayListHotel = new ArrayList<>();
 
     @GetMapping("/list")
-    public List<HotelDTO> getHotel1() {
+    public List<HotelDto> getHotel1() {
         return arrayListHotel;
     }
 
@@ -35,7 +35,7 @@ public class HotelController {
     }
 
     @GetMapping()
-    public HotelDTO getHotel2(@RequestParam("id") String id) {
+    public HotelDto getHotel2(@RequestParam("id") String id) {
         int size = arrayListHotel.size();
         for (int i = 0; i < size; i++) {
             if (id.equals(arrayListHotel.get(i).getId())) {
@@ -57,7 +57,7 @@ public class HotelController {
     }
 
     @PostMapping
-    public HotelDTO create(@RequestBody HotelDTO hotel) {
+    public HotelDto create(@RequestBody HotelDto hotel) {
         arrayListHotel.add(hotel);
         return hotel;
     }

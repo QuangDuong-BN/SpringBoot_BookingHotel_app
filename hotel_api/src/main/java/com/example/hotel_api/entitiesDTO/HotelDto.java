@@ -1,7 +1,6 @@
 package com.example.hotel_api.entitiesDTO;
 
 import com.example.hotel_api.entities.Location;
-import com.example.hotel_api.entities.Room;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -12,7 +11,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 
-public class HotelDTO {
+public class HotelDto {
     private String id;
     private String name;
     private Location location;
@@ -22,5 +21,5 @@ public class HotelDTO {
     private int vote_total;
     private String description;
     private List<String> images;
-    private List<RoomDTO> rooms;
+    private List<RoomDto> rooms;
 }

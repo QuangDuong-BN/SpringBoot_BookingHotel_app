@@ -10,7 +10,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 
-public class RoomDTO {
+public class RoomDto {
     private String id;
     private String hotel_id;
     private String room_number;

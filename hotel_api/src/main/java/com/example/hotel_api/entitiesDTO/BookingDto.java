@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 
-public class BookingDTO {
+public class BookingDto {
     private String id;
     private String customer_id;
     private String customer_name;
