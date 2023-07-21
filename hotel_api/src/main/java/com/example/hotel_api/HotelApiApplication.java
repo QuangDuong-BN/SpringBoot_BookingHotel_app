@@ -6,6 +6,7 @@ import com.example.hotel_api.entitiesDTO.BookingDto;
 import com.example.hotel_api.entitiesDTO.CustomerDto;
 import com.example.hotel_api.entitiesDTO.HotelDto;
 import com.example.hotel_api.entitiesDTO.RoomDto;
+import com.example.hotel_api.service.CustomerService;
 import com.example.hotel_api.staticmethod.ConvertoBase64;
 import io.swagger.v3.oas.annotations.OpenAPIDefinition;
 import io.swagger.v3.oas.annotations.info.Contact;

@@ -1,5 +1,7 @@
-package com.example.hotel_api.entities;
+package com.example.hotel_api.service;
 
+import com.example.hotel_api.entities.Customer;
+import com.example.hotel_api.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

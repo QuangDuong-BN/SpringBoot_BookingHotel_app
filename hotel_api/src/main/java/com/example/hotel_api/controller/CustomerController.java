@@ -1,8 +1,8 @@
 package com.example.hotel_api.controller;
 
 import com.example.hotel_api.entities.Customer;
-import com.example.hotel_api.entities.CustomerRepository;
-import com.example.hotel_api.entities.CustomerService;
+import com.example.hotel_api.repository.CustomerRepository;
+import com.example.hotel_api.service.CustomerService;
 import com.example.hotel_api.entitiesDTO.CustomerDto;
 import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.beans.factory.annotation.Autowired;
