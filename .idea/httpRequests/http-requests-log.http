@@ -1,0 +1,45 @@
+GET http://localhost:8080/booking/list
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-07-21T154406.200.json
+
+###
+
+GET http://localhost:8080/booking/month
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-07-21T154251.200.json
+
+###
+
+GET http://localhost:8080/booking/month
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-07-21T154237.200.json
+
+###
+
+GET http://localhost:8080/booking/list
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-07-21T154213.200.json
+
+###
+
+GET http://localhost:8080/booking/list
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-07-21T154046.200.json
+
+###
+
