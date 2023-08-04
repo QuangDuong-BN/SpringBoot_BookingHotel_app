@@ -1,7 +1,9 @@
 package com.example.hotel_api;
 
 import com.example.hotel_api.controller.*;
-import com.example.hotel_api.entities.*;
+import com.example.hotel_api.entities.Card;
+import com.example.hotel_api.entities.Customer;
+import com.example.hotel_api.entities.Location;
 import com.example.hotel_api.entitiesDTO.BookingDto;
 import com.example.hotel_api.entitiesDTO.CustomerDto;
 import com.example.hotel_api.entitiesDTO.HotelDto;
@@ -21,9 +23,8 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Base64;
-
+import java.util.List;
 
 
 @SpringBootApplication()

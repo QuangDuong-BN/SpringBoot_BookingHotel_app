@@ -75,10 +75,10 @@ public class BookingController {
                 }
             }
         }
+
         arrayListBooking.removeIf(arrayListBooking -> arrayListBooking.getId().equals(id));
         return "success";
-    }
-
+}
     @GetMapping("/month")
     @Operation(tags = "API booking")
     public List<StatisticDto> statisticBookByMonth() {

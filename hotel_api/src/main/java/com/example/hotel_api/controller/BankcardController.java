@@ -1,6 +1,8 @@
 package com.example.hotel_api.controller;
 
 import com.example.hotel_api.entities.Card;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -17,12 +19,12 @@ public class BankcardController {
     }
 
     @GetMapping
-    public Card get2(@RequestParam("id") String id) {
+    public ResponseEntity<?> get2(@RequestParam("id") String id) {
         for (int i = 0; i < arrayList.size(); i++) {
             if (id.equals(arrayList.get(i).getId()))
-                return arrayList.get(i);
+                return ResponseEntity.status(HttpStatus.OK).body(arrayList.get(i));
         }
-        return new Card();
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new Card());
     }
 
     @PostMapping
