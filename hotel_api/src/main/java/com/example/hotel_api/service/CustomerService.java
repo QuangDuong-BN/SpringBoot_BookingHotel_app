@@ -25,4 +25,33 @@ public class CustomerService {
         return customerRepository.findByName(name);
     }
 
+    public List<Customer> getAllCustomer() {
+        return customerRepository.findAll();
+    }
+
+    public Customer createCustomer(Customer customer) {
+        return customerRepository.save(customer);
+    }
+
+    public Customer updateCustomer(Customer customer) {
+        return customerRepository.save(customer);
+    }
+
+    public void deleteCustomer(Long id) {
+        customerRepository.deleteById(id);
+    }
+
+    public void deleteAllCustomer() {
+        customerRepository.deleteAll();
+    }
+
+    public Customer getCustomerByIdAndName(Long id, String name) {
+        return customerRepository.findByIdAndName(id, name);
+    }
+
+    // cau lenh sql lay ra danh sach customer co name giong nhau
+    // select * from customer where name like '%name%'
+    public List<Customer> getCustomerByNameLike(String name) {
+        return customerRepository.findByNameLike(name);
+    }
 }

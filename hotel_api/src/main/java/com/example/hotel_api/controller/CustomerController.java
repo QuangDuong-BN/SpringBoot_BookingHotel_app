@@ -1,9 +1,9 @@
 package com.example.hotel_api.controller;
 
 import com.example.hotel_api.entities.Customer;
+import com.example.hotel_api.entitiesDTO.CustomerDto;
 import com.example.hotel_api.repository.CustomerRepository;
 import com.example.hotel_api.service.CustomerService;
-import com.example.hotel_api.entitiesDTO.CustomerDto;
 import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -60,6 +60,10 @@ public class CustomerController {
         return null;
     }
 
+    @Operation(
+            summary = "api đăng ký",
+            description = "trả về true nếu đăng ký thành công , trả về false nếu đăng ký thất bại"
+    )
     @PostMapping("/register")
     public boolean register(@RequestParam("id") String id,
                             @RequestParam("name") String name,
@@ -76,20 +80,27 @@ public class CustomerController {
         return true;
     }
 
-
+    @Operation(
+            summary = "delete customer by id",
+            description = "trả về void"
+    )
     @DeleteMapping("/{id}")
     public void deleteCustomer(@PathVariable String id) {
         arrayListCustomer.removeIf(arrayListCustomer -> arrayListCustomer.getId().equals(id));
     }
 
-    @GetMapping("/test")
     @Operation(
-            tags = "test nè"
+            summary = "test",
+            description = "trả về void"
     )
+    @GetMapping("/test")
     public String getTest() {
         Customer customer = customerRepository.findById((long) 1).orElse(null);
         customerService.getUserById((long) 1);
-        return customer.toString();
+        if (customer == null)
+            return "null";
+        else
+            return customer.toString();
     }
 
 

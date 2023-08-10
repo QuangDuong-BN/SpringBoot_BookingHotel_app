@@ -55,8 +55,14 @@ public class HotelApiApplication {
         Customer customer = customerService.getUserById((long) 1);
         System.out.println(customer.toString());
 
-        System.out.println("ket quan truy van:");
-        System.out.println(customer.toString());
+        System.out.println("ket quan truy van su dung findByIdAndName:");
+        Customer customer1 = customerService.getCustomerByIdAndName((long) 1, "duong");
+        System.out.println(customer1.toString());
+
+
+        System.out.println("ket quan truy van su dung findByNameLike:");
+        List<Customer> listCustomer = customerService.getCustomerByNameLike("duong");
+        System.out.println(listCustomer.toString());
 
 
         BankcardController bankcardController = context.getBean(BankcardController.class);

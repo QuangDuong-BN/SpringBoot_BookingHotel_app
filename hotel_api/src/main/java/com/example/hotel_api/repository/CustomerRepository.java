@@ -10,7 +10,13 @@ import java.util.List;
 
 @Repository
 public interface CustomerRepository extends JpaRepository<Customer, Long> {
-    // Các phương thức truy vấn cơ sở dữ liệu sẽ được tự động tạo ra bởi Spring Data JPA
+    // tim kiem theo ten
     @Query("SELECT c FROM Customer c WHERE c.name = :name")
     List<Customer> findByName(@Param("name") String name);
+
+    //
+    Customer findByIdAndName(Long id, String name);
+
+    // tim kiem theo ten
+    List<Customer> findByNameLike(String name);
 }
