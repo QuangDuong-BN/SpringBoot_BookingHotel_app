@@ -8,6 +8,7 @@ import com.example.hotel_api.entitiesDTO.BookingDto;
 import com.example.hotel_api.entitiesDTO.CustomerDto;
 import com.example.hotel_api.entitiesDTO.HotelDto;
 import com.example.hotel_api.entitiesDTO.RoomDto;
+import com.example.hotel_api.repository.CustomerRepository;
 import com.example.hotel_api.service.CustomerService;
 import com.example.hotel_api.staticmethod.ConvertoBase64;
 import io.swagger.v3.oas.annotations.OpenAPIDefinition;
@@ -63,6 +64,21 @@ public class HotelApiApplication {
         System.out.println("ket quan truy van su dung findByNameLike:");
         List<Customer> listCustomer = customerService.getCustomerByNameLike("duong");
         System.out.println(listCustomer.toString());
+
+        // tet truy van:
+        System.out.println("Ket qua truy van su dung CustomerRepository and method findAll: ");
+        CustomerRepository customerRepository = context.getBean(CustomerRepository.class);
+
+        customerRepository.findAll().forEach(System.out::println);
+
+        // truy van :
+        List<String> listHotel = customerRepository.findListHotel();
+        listHotel.forEach(System.out::println);
+
+        // Test truy van
+        System.out.println("Test cau lenh truy van vua hoc:");
+        List<Customer> customerList = customerRepository.findUserByEmailAndName("quangduong19992001@gmali.com", "huyen");
+        System.out.println(customerList.toString());
 
 
         BankcardController bankcardController = context.getBean(BankcardController.class);
