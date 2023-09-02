@@ -17,12 +17,11 @@ public class Customer {
     private long id;
     @Column
     private String name;
-    @Column
+    @Column(nullable = false, unique = true)
     private String email;
-    @Column
+    @Column(nullable = false, unique = true)
     private String phone;
     @Column
     private String password;
-
 
 }

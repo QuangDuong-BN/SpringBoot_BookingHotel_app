@@ -56,14 +56,14 @@ public class HotelApiApplication {
         Customer customer = customerService.getUserById((long) 1);
         System.out.println(customer.toString());
 
-        System.out.println("ket quan truy van su dung findByIdAndName:");
-        Customer customer1 = customerService.getCustomerByIdAndName((long) 1, "duong");
-        System.out.println(customer1.toString());
+//        System.out.println("ket quan truy van su dung findByIdAndName:");
+//        Customer customer1 = customerService.getCustomerByIdAndName((long) 1, "duong");
+//        System.out.println(customer1.toString());
 
-
-        System.out.println("ket quan truy van su dung findByNameLike:");
-        List<Customer> listCustomer = customerService.getCustomerByNameLike("duong");
-        System.out.println(listCustomer.toString());
+//
+//        System.out.println("ket quan truy van su dung findByNameLike:");
+//        List<Customer> listCustomer = customerService.getCustomerByNameLike("duong");
+//        System.out.println(listCustomer.toString());
 
         // tet truy van:
         System.out.println("Ket qua truy van su dung CustomerRepository and method findAll: ");
@@ -71,14 +71,14 @@ public class HotelApiApplication {
 
         customerRepository.findAll().forEach(System.out::println);
 
-        // truy van :
-        List<String> listHotel = customerRepository.findListHotel();
-        listHotel.forEach(System.out::println);
-
-        // Test truy van
-        System.out.println("Test cau lenh truy van vua hoc:");
-        List<Customer> customerList = customerRepository.findUserByEmailAndName("quangduong19992001@gmali.com", "huyen");
-        System.out.println(customerList.toString());
+//        // truy van :
+//        List<String> listHotel = customerRepository.findListHotel();
+//        listHotel.forEach(System.out::println);
+//
+//        // Test truy van
+//        System.out.println("Test cau lenh truy van vua hoc:");
+//        List<Customer> customerList = customerRepository.findUserByEmailAndName("quangduong19992001@gmali.com", "huyen");
+//        System.out.println(customerList.toString());
 
 
         BankcardController bankcardController = context.getBean(BankcardController.class);
